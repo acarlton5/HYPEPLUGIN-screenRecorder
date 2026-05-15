@@ -152,7 +152,7 @@ PluginSettings {
             }
 
             StyledText {
-                text: "• dms ipc call screenRecorder toggleRecording\n• dms ipc call screenRecorder startRecording\n• dms ipc call screenRecorder stopRecording\n• dms ipc call screenRecorder togglePause"
+                text: "• hype ipc call screenRecorder toggleRecording\n• hype ipc call screenRecorder startRecording\n• hype ipc call screenRecorder stopRecording\n• hype ipc call screenRecorder togglePause"
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.surfaceVariantText
                 wrapMode: Text.WordWrap

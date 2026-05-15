@@ -52,7 +52,7 @@ git clone https://github.com/arqueon/dms-screen-recorder
 ln -sf "$(pwd)/dms-screen-recorder" ~/.config/DankMaterialShell/plugins/screenRecorder
 
 # Reload
-dms ipc call plugins reload screenRecorder
+hype ipc call plugins reload screenRecorder
 ```
 
 Then go to **DMS Settings → Plugins** and enable the plugin on the bar.
@@ -74,10 +74,10 @@ When you click to stop, the pill turns orange and shows **Stop?** for 3 seconds.
 The plugin exposes IPC commands you can bind to keyboard shortcuts:
 
 ```bash
-dms ipc call screenRecorder toggleRecording   # start or stop
-dms ipc call screenRecorder startRecording
-dms ipc call screenRecorder stopRecording
-dms ipc call screenRecorder togglePause       # pause or resume
+hype ipc call screenRecorder toggleRecording   # start or stop
+hype ipc call screenRecorder startRecording
+hype ipc call screenRecorder stopRecording
+hype ipc call screenRecorder togglePause       # pause or resume
 ```
 
 > **Note:** IPC commands bypass the 3-second stop confirmation. `toggleRecording` stops immediately when a recording is active.
@@ -92,20 +92,20 @@ bindings {
 
 **Hyprland** (`hyprland.conf`):
 ```conf
-bind = SUPER ALT, R, exec, dms ipc call screenRecorder toggleRecording
-bind = SUPER ALT, P, exec, dms ipc call screenRecorder togglePause
+bind = SUPER ALT, R, exec, hype ipc call screenRecorder toggleRecording
+bind = SUPER ALT, P, exec, hype ipc call screenRecorder togglePause
 ```
 
 **Sway** (`~/.config/sway/config`):
 ```conf
-bindsym $mod+Alt+r exec dms ipc call screenRecorder toggleRecording
-bindsym $mod+Alt+p exec dms ipc call screenRecorder togglePause
+bindsym $mod+Alt+r exec hype ipc call screenRecorder toggleRecording
+bindsym $mod+Alt+p exec hype ipc call screenRecorder togglePause
 ```
 
 **KDE Plasma** (System Settings → Shortcuts → Custom Shortcuts):
-Set the trigger command to `dms ipc call screenRecorder toggleRecording`.
+Set the trigger command to `hype ipc call screenRecorder toggleRecording`.
 
-**Wayfire / COSMIC / any compositor with custom keybind support:** Run `dms ipc call screenRecorder <method>` as the command.
+**Wayfire / COSMIC / any compositor with custom keybind support:** Run `hype ipc call screenRecorder <method>` as the command.
 
 ## Configuration
 
@@ -128,8 +128,8 @@ The plugin sends `SIGINT` to `gpu-screen-recorder` so it finalises and saves the
 
 ```bash
 ln -sf "$(pwd)" ~/.config/DankMaterialShell/plugins/screenRecorder
-dms ipc call plugins reload screenRecorder
-dms ipc call plugins list
+hype ipc call plugins reload screenRecorder
+hype ipc call plugins list
 ```
 
 ## License
